@@ -1,0 +1,48 @@
+<!-- 
+	What is JQuery?
+	Jquery is a light weight library of javascript that simplifies programming with javascript.
+    
+    According to jquery.com
+    	Jquery is the fast and rich featured javascrpt librar. It makes things like HTML document traversal,
+        and manipilate event handling, animation and ajax much simpler with an easy to use api that works across
+        multiple browsers.
+        
+        With a combination of versatality and extensibility, JQuery that changed the way that millions of people
+        that use JQuery.
+        
+    Advantages of using JQuery
+    	1) JQuery is cross browser.
+        2) JQuery is lot more easy to use than a row javascript.
+        3) JQuery is extensible.
+        4) Jquery simplifies and has rich AJAX support.
+        5) JQuery has large development community and many plugins. Example autocomplete textbox plugin.
+        6) Excellent documentation.
+        
+    How to use JQuery in a web application.
+    	Download jquery file from jquery.com and reference it in your application just like any other javascript 
+        file.
+        
+    What is the difference between JQuery 1.x and 2.x.
+    	If you want to support IE6/7/8 then use JQuery 1.x where as if you don't have the need to support 		IE6/7/8 then use JQuery 2.x JQuery 2.x is smaller in size than JQuery 1.x.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+/*
+	Points to remember in JQuery.
+    1. ready() funtion ensure that the DOM is fully loaded.
+    2. $ is a shortcut for jquery.
+*/
+$(document).ready(function(){
+  $("button").click(function(){
+    alert("Hello from JQuery")
+  });
+});
+</script>
+</head>
+<body>
+  <button>Click me to hide paragraphs</button>  
+</body>
+</html>
