@@ -1,0 +1,54 @@
+<!-- Now let us look at an example of making attribute contains selector [name*="value"], 
+    case-insensitive.
+
+The following example, selects only DIV 1 element. This is because the attribute contains selector 
+is case-sensitive.  -->
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('div[title*="Div"]').css('border', '3px solid red');
+        });
+    </script>
+</head>
+<body>
+    <div title="DivTitle1">
+        DIV 1
+    </div>
+    <br />
+    <div title="DIVTITLE2">
+        DIV 2
+    </div>
+    <br />
+    <div title="divtitle3">
+        DIV 3
+    </div>
+</body>
+</html>
+
+
+<!-- To make attribute contains selector case-insensitive, use filter() method and regular expression as shown below. -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('div[title]').filter(function () {
+            return (/Div/i).test($(this).attr('title'));
+        }).css('border', '3px solid red');
+    });
+</script>
+
+<!-- OR -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('div[title]').filter(function () {
+            return RegExp('Div', 'i').test($(this).attr('title'));
+        }).css('border', '3px solid red');
+    });
+</script>
+<!-- 
+Visual Studio Keyboard Shortcuts
+Convert Selected Text to Upper Case - CTRL + SHIFT + U
+Convert Selected Text to Lower Case - CTRL + U -->

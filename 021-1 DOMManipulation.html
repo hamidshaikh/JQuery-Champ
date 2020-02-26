@@ -1,0 +1,88 @@
+<!-- How to set multiple attribute values : Using a JSON object to set multiple attribute values -->
+<html>
+<head>
+    <title></title>
+    <script src="jquery-1.11.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var config = {
+                'title': 'New Div Title',
+                'style': 'border:3px solid red;',
+                'name': 'My Div'
+            };
+
+            $('div').attr(config);
+
+            var result = '';
+            $('div').each(function () {
+                result += 'title = ' + $(this).attr('title') + '<br/>';
+                result += 'style = ' + $(this).attr('style') + '<br/>';
+
+ 
+                result += 'name = ' + $(this).attr('name') + '<br/><br/>';
+            });
+
+            $('#resultSpan').html(result);
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="div1" title="My DIV1">
+        DIV 1
+    </div>
+    <br />
+    <div id="div2" title="My DIV2">
+        DIV 2
+    </div>
+    <br />
+    <span id="resultSpan">
+    </span>
+</body>
+</html>
+
+<!-- Instead of creating a separate JSON object (config) and then passing it to attr() method,
+     you can create the JSON object inline.
+$('div').attr({
+    'title': 'New Div Title',
+    'style': 'border:3px solid red;',
+    'name': 'My Div'
+});
+
+You can also use method chaining to set multiple attribute values
+$('div')
+    .attr('title', 'New Div Title')
+    .attr('style', 'border:3px solid red;')
+    .attr('name', 'My Div');
+
+How to remove an attribute using jQuery removeAttr() method : The following line of code removes title attribute of all the div elements that have a title attribute.
+$('div[title]').removeAttr('title'); -->
+
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var result = 'DIV Elements with title attribute = ' + $('div[title]').length + '<br/>';
+            result += 'Removing title attribute <br/>';
+            $('div[title]').removeAttr('title');
+            result += 'DIV Elements with title attribute = ' + $('div[title]').length;
+
+            $('#resultSpan').html(result);
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="div1" title="My DIV1">
+        DIV 1
+    </div>
+    <br />
+    <div id="div2" title="My DIV2">
+        DIV 2
+    </div>
+    <br />
+    <span id="resultSpan">
+    </span>
+</body>
+</html>

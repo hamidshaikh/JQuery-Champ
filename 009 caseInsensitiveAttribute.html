@@ -1,0 +1,42 @@
+<!-- In this video we will discuss, how to write a jQuery case-insensitive attribute value selector. 
+    Let us understand this with an example. --> 
+
+    <!-- The following example, only selects DIV 1. This is because jQuery attribute value selector is 
+        case-sensitive. -->
+
+        <html>
+            <head>
+                <title></title>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('div[title="DivTitle"]').css('border', '3px solid red');
+                    });
+                </script>
+            </head>
+            <body>
+                <div title="DivTitle">
+                    DIV 1
+                </div>
+                <br />
+                <div title="DIVTITLE">
+                    DIV 2
+                </div>
+                <br />
+                <div title="divtitle">
+                    DIV 3
+                </div>
+            </body>
+            </html>        
+
+            <!-- Use the following code to make the jQuery attribute value selector case-insensitive  -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('div[title]').filter(function () {
+                        return $(this).attr('title').toLowerCase() == 'divtitle';
+                    }).css('border', '3px solid red');
+                });
+            </script>
+            
+            <!-- The above script should select all the 3 divs. -->
+

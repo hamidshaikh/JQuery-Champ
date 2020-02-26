@@ -1,0 +1,46 @@
+<!-- In this video we will discuss
+1. How to convert JSON object to string
+2. How to convert string to JSON object
+
+This is continuation Part 18. Please watch Part 18 from jQuery tutorial before proceeding.
+
+The following example converts JSON array to a string. JSON.stringify() method converts a JSON object 
+(or array) into a JSON string. -->
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var employeesJSON = [
+                {
+                    "firstName": "Todd",
+                    "lastName": "Grover",
+                    "gender": "Male",
+                    "salary": 50000
+                },
+                {
+                    "firstName": "Sara",
+                    "lastName": "Baker",
+                    "gender": "Female",
+                    "salary": 40000
+                }
+            ];
+
+            var JSONString = JSON.stringify(employeesJSON);
+            $('#resultDiv').html(JSONString);
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="resultDiv"></div>
+</body>
+</html>
+
+
+<!-- Output : 
+[{"firstName":"Todd","lastName":"Grover","gender":"Male","salary":50000},
+{"firstName":"Sara","lastName":"Baker","gender":"Female","salary":40000}]-->
+
+

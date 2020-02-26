@@ -1,0 +1,55 @@
+<!-- In jQuery there are 2 versions of each() method
+1. .each()
+2. $.each() or jQuery.each() -->
+
+<!-- Please note : $ is shortcut for jQuery.
+
+What is the difference
+.each is used to iterate over the items in a jQuery collection 
+
+Example : In this example, the jQuery selector $('li') returns a jQuery object collection. So to loop 
+thru the objects in the jQuery collection we are using .each() method. Notice this method is called on 
+the jQuery object collection, that the selector returns, so the .each() method knows the items it has to 
+iterate over. 
+
+The callback method has 2 parameters
+1) index - The index of the element 
+2) element - The DOM element that we are currently iterating over
+
+Since the element is a raw DOM object, to use use jQuery methods you have to wrap it using the jQuery 
+wrapper $ as shown below.
+$(element)
+
+Instead of using element parameter, you can also use this keyword, which also refers to the raw DOM 
+element that we are currently iterating over. To use jQuery methods you have to wrap it using the jQuery 
+wrapper $ as shown below.
+$(this) -->
+
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var result = '';
+            $('li').each(function (index, element) {
+                result += 'Index = ' + index + ', Value = ' + $(element).text() + '<br/>';
+                //or
+                //result += 'Index = ' + index + ', Value = ' + $(this).text() + '<br/>';
+            });
+            $('#resultDiv').html(result);
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <ul>
+        <li>US</li>
+        <li>India</li>
+        <li>UK</li>
+        <li>Canada</li>
+        <li>Australia</li>
+    </ul>
+    <div id="resultDiv"></div>
+</body>
+</html>

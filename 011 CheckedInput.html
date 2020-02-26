@@ -1,0 +1,43 @@
+<!-- In this video we will discuss the jQuery :checked selector. -->
+
+<!-- The :checked selector selects all checked check-boxes or radio buttons. Let us understand this with an 
+example.
+
+Selects all checked radio button elements
+$('input[type="radio"]:checked')
+
+Example : When you click the submit button without selecting any radio button, "No radio button checked" 
+message should be displayed. -->
+
+<!-- When you click the submit button after a radio button is checked, then a message stating "Male is 
+checked" or "Female is checked" should be displayed. -->
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnSubmit').click(function () {
+                var result = $('input[type="radio"]:checked');
+                if (result.length > 0) {
+                    $('#divResult').html(result.val() + " is checked");
+                }
+                else {
+                    $('#divResult').html("No radio button checked");
+                }
+            });
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    Gender :
+    <input type="radio" name="gender" value="Male">Male
+    <input type="radio" name="gender" value="Female">Female
+    <br /><br />
+    <input id="btnSubmit" type="submit" value="submit" />
+    <br /><br />
+    <div id="divResult">
+    </div>
+</body>
+</html>

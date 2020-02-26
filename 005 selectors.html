@@ -1,0 +1,89 @@
+<!-- 
+    In this video we will discuss jQuery Element Selector, i.e selecting elements by tag name.
+
+    To select the elements by tag name use jQuery Element Selector
+
+    Syntax : $(element)
+
+    $('td') // Selects all td elements
+    $('div a') // Select all anchor elements that are descendants of div element
+    $('div, span, a') // Selects all div, span and anchor elements
+
+    Alerts the total count of td elements on the page
+
+-->
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <table style="border:1px solid black; border-collapse:collapse">
+        <tr>
+            <td>C#</td>
+            <td>ASP.NET</td>
+            <td>SQL Server</td>
+        </tr>
+        <tr>
+            <td>ADO.NET</td>
+            <td>jQuery</td>
+            <td>JavaScript</td>
+        </tr>
+        <tr>
+            <td>AJAX</td>
+            <td>CSS</td>
+            <td>HTML</td>
+        </tr>
+        <tr>
+            <td>VB</td>
+            <td>Dot NET</td>
+            <td>Visual C++</td>
+        </tr>
+        <tr>
+            <td>Oracle</td>
+            <td>Java</td>
+            <td>J2EE</td>
+        </tr>
+    </table>
+    <br /><br />
+    <div>
+        DIV 1
+        <br />
+        <a href="http://pragimtech.com">PragimTech</a>
+    </div>
+    <br /><br />
+    <a href="http://google.com">Google</a>
+    <br /><br />
+    <div>DIV 2</div>
+    <br /><br />
+    <span>SPAN 1</span>
+    <br /><br />
+    <div>DIV 3</div>
+</body>
+</html>
+<!-- Selects all the tr elements on the page and changes their background colour to red -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('tr').css('background-Color', 'red');
+    });
+
+    // Alerts the HTML content of the table
+
+    $(document).ready(function () {
+        alert($('table').html());
+    });
+
+    // Alerts the HTML content of each table row
+    $(document).ready(function () {
+        $('table tr').each(function () {
+            alert($(this).html());
+        });
+    });
+
+    // Select and changes the background colour of all the div, span and anchor elements
+    $(document).ready(function () {
+        $('div, span, a').css('background-color', 'yellow');
+    });
+
+</script>
+

@@ -1,0 +1,75 @@
+<!-- In this video we will discuss how to wrap and unwrap elements
+The following jquery methods are used to wrap and unwrap elements. Since these methods modify DOM, they belong to DOM manipulation category.
+wrap
+unwrap
+wrapAll
+wrapInner
+
+wrap - Wrap an HTML structure around each element in the set of matched elements.
+
+Consider the following HTML -->
+<!-- 
+<div id="div1">
+    DIV 1
+</div>
+<div id="div2">
+    DIV 2
+</div>
+<div id="div3">
+    DIV 3
+</div> -->
+
+<!-- The following line of code wraps each of the above div element with another div element.
+$('div').wrap('<div class="containerDiv"></div>');
+
+So the HTML in the DOM would now look as shown below. To view the DOM HTML use the browser developer 
+tools. -->
+
+<!-- <div class="containerDiv">
+    <div id="div1">
+        DIV 1
+    </div>
+</div>
+<div class="containerDiv">
+    <div id="div2">
+        DIV 2
+    </div>
+</div>
+<div class="containerDiv">
+    <div id="div3">
+        DIV 3
+    </div>
+</div> -->
+
+<html>
+<head>
+    <title></title>
+    <style>
+        .containerDiv {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            margin: 5px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            alert($('div.containerDiv').length);
+            $('div').wrap('<div class="containerDiv"></div>');
+            alert($('div.containerDiv').length);
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="div1">
+        DIV 1
+    </div>
+    <div id="div2">
+        DIV 2
+    </div>
+    <div id="div3">
+        DIV 3
+    </div>
+</body>
+</html>

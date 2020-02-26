@@ -1,0 +1,40 @@
+<!-- $.each() or jQuery.each() is used for iterating over javascript objects and arrays.
+
+Example : In the example below intArray is a JavaScript array. So to loop thru the elements in the 
+array we are using $.each() function. Notice this function has 2 parameters
+
+ 
+
+
+1) The JavaScript object or array that we want to iterate over
+2) The callback function that will execute on each iteration
+
+If you want to use .each() instead of $.each() function on the intArray object, wrap it using the 
+jQuery wrapper $ as shown below.
+
+$(intArray).each(function (index, element) {
+    result += 'Index = ' + index + ', Value = ' + element + '<br />';
+}) -->
+
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var intArray = [100, 200, 300, 400, 500];
+            var result = '';
+
+            $.each(intArray, function (index, element) {
+                result += 'Index = ' + index + ', Value = ' + element + '<br/>';
+            });
+
+            $('#resultDiv').html(result);
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="resultDiv"></div>
+</body>
+</html>

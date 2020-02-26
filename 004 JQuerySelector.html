@@ -1,0 +1,55 @@
+<!-- 
+    What is JQuery selectors
+    One of the most important concept in jquery selectors. Jquery selector aloow you to select and 
+    manipulate HTML element.
+
+    * Different selectors in query ; 
+        1. Element ID
+        2. Element Tag name
+        3. Element class name
+        4. Element Atrributes
+        5. element attribute value and namy more
+
+    JQuery ID Selector :
+        JQuery id selector uses the javascript document.getElementById() funtion.
+
+    JQuery Id selector is the most efficient amongs all JQuery selector. if you know id of an element 
+    that you want to find, then always use #id selector.
+
+    HTML element IDs must be unique on the page. JQuery ID selector return only the first element, If you 
+    have two or more elements with same elements.
+
+    javascript document.getElementById() throw an error if the element with the given id is not found
+    Where as JQuery #ID selector will not throw an error.to check an element is returned by the #ID 
+    selector use lenth property.
+
+    javascript documet.getElementById() and JQuery(#id) selector are not the same. document.getElementById()
+    return row DOM object that wraps the DOM object and provide jquery methods. this is the reson you are 
+    able to call JQuery method like scc(), click() on the object returned by JQuery.
+
+    To get the underline DOM object from the jquery object use $(#id)[0]
+
+    document.getElementById() is faster than JQuery(#id) selector. Uses document.getElementById() over
+    JQuery(#id) selector unless you need an extra funtionality provided by the jquery object.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        if($("#button1").length > 0){
+            alert("Button found");
+            $("#button1").css("background-color", 'red');
+        }
+        else{
+            alert("Button not found");
+        }
+    });
+</script>
+</head>
+<body>
+  <input type="button" id="button1" value="Submit"/>
+  <input type="button" id="button1" value="Submit"/>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!-- 
+    $(document).ready is jquery event. It fires as soon as the dom is loaded and ready to be manipulated
+    by script. This is the earliest point in the page load process where the script can sefely access
+    elements in the pages html DOM. This event is fired before all the images, css are fully loaded.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#imageDiamention").html("Width " + $("#img1").width() + 
+        " Height " + $("#img1").height());
+    });
+</script>
+</head>
+<body>
+  <div id="imageDiamention"></div>
+  <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"  id="img1"/>
+</body>
+</html>

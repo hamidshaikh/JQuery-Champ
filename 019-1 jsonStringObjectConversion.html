@@ -1,0 +1,31 @@
+<!-- The following example converts a JSON string to a JSON array. JSON.parse() method converts a JSON string 
+to JSON array. We then use the jQuery each() method to loop thru each employee JSON object and retrieve 
+the respective property values.  -->
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var JSONString = '[{ "firstName": "Todd", "lastName": "Grover", "gender": "Male", "salary": 50000 }, { "firstName": "Sara", "lastName": "Baker", "gender": "Female", "salary": 40000 }]';
+
+            var employeesJSON = JSON.parse(JSONString);
+
+            var result = '';
+
+            $.each(employeesJSON, function (i, item) {
+                result += 'First Name = ' + item.firstName + '<br/>';
+                result += 'Last Name = ' + item.lastName + '<br/>';
+                result += 'Gender = ' + item.gender + '<br/>';
+                result += 'Salary = ' + item.salary + '<br/><br/>';
+            });
+
+            $('#resultDiv').html(result);
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="resultDiv"></div>
+</body>
+</html>

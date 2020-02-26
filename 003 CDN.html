@@ -1,0 +1,44 @@
+<!-- 
+    * What id CDN?
+    CDN stands for Content Delevary Network. A CDN is a system of distributed servers that hosts 
+    resources such as image, css, javascript file etc.
+
+    Companies like Microsoft, Google, Yahoo etc. have a free public CDN from which we can load jquery 
+    instead of hosting it on our own web server. 
+
+    * Benifit of using CDN:
+    Distributed CDN server : 
+        The jquery file can be downloaded from the CDN server that is closest to
+    the user.
+
+    * Browsing Caching : 
+        JQuery is used on many popular websites, If use has already wisited a webpage 
+    that uses a JQuery from the CDN. and if he arrives at your page, the JQuery file has already been 
+    cached by the browser so there is no need to download it again.
+
+    * Parallel downloads : 
+        There is a browser limit on how many files can be currently downloaded from given domain. 
+        This number can be varies from a given domain. This number can be varies from browser to browser
+
+    * Reduce server load :
+        The HTTP request for jquery file is handled by the CDN server, so the load on your web server 
+        is reduced. This also means there is saving on your website bandwiths consumption which in turn
+        will reduce your hosting cost.
+
+    * Disadvantage : 
+        Your client firewalls may block the CDN. So you may have to request your clients to whitelist
+        the CDN.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    window.JQuery || document.write("<script src='JQuery-1.11.2.js'><\/script>");
+</script>
+</head>
+<body>
+  <div id="imageDiamention"></div>
+  <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"  id="img1"/>
+</body>
+</html>

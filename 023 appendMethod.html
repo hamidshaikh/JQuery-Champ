@@ -1,0 +1,33 @@
+<!-- In this video we will discuss how to append and prepend elements
+
+
+ 
+
+To append elements we have
+append()
+appendTo()
+
+To prepend elements we have
+prepend()
+prependTo()
+
+Since these methods modify DOM, they belong to DOM manipulation category.
+
+jquery append example : The following example appends the specified HTML to all div elements -->
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('div').append('<b> Tutorial</b>');
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="div1">jQuery</div>
+    <div id="div2">C#</div>
+    <div id="div3">ASP.NET</div>
+</body>
+</html>

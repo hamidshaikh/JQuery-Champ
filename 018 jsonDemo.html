@@ -1,0 +1,66 @@
+<!-- In this video we will discuss
+1. What is JSON
+2. JSON Arrays
+3. Nested JSON object -->
+
+<!-- What is JSON
+JSON stands for JavaScript Object Notation. JSON is a lightweight data-interchange format. JSON is an easier-to-use alternative to XML.
+
+Creating a JSON object : Employee data can be stored in a JSON object as shown below.
+
+var employeeJSON = {
+    "firstName": "Todd",
+    "lastName": "Grover",
+    "gender": "Male",
+    "salary": 50000
+};
+
+1. employeeJSON is a JSON object
+2. In the curly braces we include the "name": "value" pairs, separated by commas
+3. The name and value of a property are separated using a colon (:)
+4. You can declare any number of properties
+
+If you want to represent the same data using XML, you may have XML that would look as shown below.
+<Employee>
+  <firstName>Todd</firstName>
+  <lastName>Grover</lastName>
+  <gender>Male</gender>
+  <salary>50000</salary>
+</Employee>
+
+Reading data from the JSON object : To read data from the JSON object, use the property names.
+var firstName = employeeJSON.firstName;
+
+Creating and accessing data from a JSON object -->
+
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            // Creating a JSON object
+            var employeeJSON = {
+                "firstName": "Todd",
+                "lastName": "Grover",
+                "gender": "Male",
+                "salary": 50000
+            };
+
+            // Accessing data from a JSON object
+            var result = '';
+            result += 'First Name = ' + employeeJSON.firstName + '<br/>';
+            result += 'Last Name = ' + employeeJSON.lastName + '<br/>';
+            result += 'Gender = ' + employeeJSON.gender + '<br/>';
+            result += 'Salary = ' + employeeJSON.salary + '<br/>';
+
+            $('#resultDiv').html(result);
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="resultDiv"></div>
+</body>
+</html>

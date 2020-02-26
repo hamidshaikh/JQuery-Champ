@@ -1,0 +1,67 @@
+<!-- wrapInner - Wrap an HTML structure around the content of each element in the set of matched elements.
+
+Consider the following HTML
+<div id="div1">
+    DIV 1
+</div>
+<div id="div2">
+    DIV 2
+</div>
+<div id="div3">
+    DIV 3
+</div>
+
+The following line of code wraps each of the above div element content with another div element.
+$('div').wrapInner('<div class="containerDiv"></div>');
+
+ 
+
+So the HTML in the DOM would now look as shown below.
+<div id="div1">
+    <div class="containerDiv">
+        DIV 1
+    </div>
+</div>
+<div id="div2">
+    <div class="containerDiv">
+        DIV 2
+    </div>
+</div>
+<div id="div3">
+    <div class="containerDiv">
+        DIV 3
+    </div>
+</div>
+
+Example :  -->
+
+<html>
+<head>
+    <title></title>
+    <style>
+        .containerDiv {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            margin: 5px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('div').wrapInner('<div class="containerDiv"></div>');
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="div1">
+        DIV 1
+    </div>
+    <div id="div2">
+        DIV 2
+    </div>
+    <div id="div3">
+        DIV 3
+    </div>
+</body>
+</html>

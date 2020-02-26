@@ -1,0 +1,72 @@
+<!-- In this video we will discuss 
+1. Use of jQuery each function
+2. How to exit from each function in jQuery
+3. Implicit iteration in jQuery
+4. Performance considerations when using jquery each function -->
+
+<!-- jQuery each function is used to iterate over the items in a collection. For each item in the 
+collection the anonymous function is called. The index of the element and the element itself are passed 
+to the anonymous function. 
+
+$('li').each(function (index, element) {
+    alert(index + ' : ' + $(element).text());
+});
+
+To refer to the current element that we are iterating over you can also use this keyword.
+$('li').each(function (index) {
+    alert(index + ' : ' + $(this).text());
+});
+
+If you don't care about the index and just need the text of the list item, then you can get rid of the 
+index parameter
+$('li').each(function () {
+    alert($(this).text());
+}); -->
+
+<!-- How to exit from each function in jQuery : To exit from each function, return false.
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('li').each(function () {
+            if ($(this).text() == 'UK') {
+                return false;
+            }
+            alert($(this).text());
+        });
+    });
+</script>
+
+Implicit iteration in jQuery : The $('li') selector returns all list item elements. Notice that we are 
+calling the css() jquery function on the jquery collection itself. In this case, css() method implicitly 
+iterates over each element in the entire collection.  -->
+
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li').css('color', 'red');
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <ul>
+        <li>US</li>
+        <li>India</li>
+        <li>UK</li>
+        <li>Canada</li>
+        <li>Australia</li>
+    </ul>
+</body>
+</html>
+
+<!-- There is no need to explicitly iterate over each element in the collection. Most jQuery methods 
+implicitly iterate over the entire collection. -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('li').each(function () {
+            $(this).css('color', 'red');
+        });
+    });
+</script>

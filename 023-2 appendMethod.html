@@ -1,0 +1,24 @@
+<!-- What is the difference between append and appendTo
+Both these methods perform the same task. The only difference is in the syntax. With append method we 
+first specify the target elements and then the content that we want to append, where as we do the 
+opposite with appendTo method.
+
+jquery prepend example : The following example prepends the specified HTML to all div elements -->
+
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('div').prepend('<b>Tutorial </b>');
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="div1">jQuery</div>
+    <div id="div2">C#</div>
+    <div id="div3">ASP.NET</div>
+</body>
+</html>

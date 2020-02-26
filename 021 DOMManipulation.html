@@ -1,0 +1,86 @@
+<!-- In this video we will discuss
+1. What are jQuery DOM manipulation methods
+2. How to set attribute values using jQuery attr() method
+3. How to retrieve attribute values using jQuery attr() method
+4. How to set multiple attribute values using jQuery attr() method
+5. How to remove an attribute using jQuery removeAttr() methods
+
+What are jQuery DOM manipulation methods
+jQuery DOM manipulation methods manipulate the DOM in some manner. The complete list of jQuery DOM 
+manipulation methods can be found at the following link.
+http://api.jquery.com/category/manipulation/
+
+jQuery attr method is used to set or retrieve attribute values of html elements.
+
+Retrieves the title attribute value of the first matching element
+$('div').attr('title')
+
+Example : In this example we have 2 DIV elements. Since attr() function retrieves only the attribute 
+value of first matching element, we only get the title attribute value of the first DIV element. -->
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            alert($('div').attr('title'));
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div id="div1" title="My DIV1">
+        DIV 1
+    </div>
+    <div id="div2" title="My DIV2">
+        DIV 2
+    </div>
+</body>
+</html>
+
+<!-- To retrieve the title attribute value of all the matching elements, jQuery each() method 
+can be used. -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('div').each(function () {
+            alert($(this).attr('title'));
+        });
+    });
+</script>
+
+<!-- Sets the title attribute value of all the matching elements to "new div title"
+$('div').attr('title', 'new div title'); -->
+
+<!-- Sets the title attribute value of all the matching elements to "new div title"
+$('div').attr('title', 'new div title'); -->
+
+<!-- Example : If you want to set the same value for the title attribute of all the elements, then there 
+is no need to loop thru each element. All the div elements in this case will have 'new div title' as the 
+title attribute value. -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        // set the same title attribute value for all the DIV elements
+        $('div').attr('title', 'new div title');
+
+        // Retrieve and alert the title attribute value of all DIV elements
+        $('div').each(function () {
+            alert($(this).attr('title'));
+        });
+    });
+</script>
+
+<!-- If you want to set a different value for the title attribute, then you may need to loop thru each
+element. -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        // sets a different title attribute value for each DIV element
+        $('div').each(function (i) {
+            $(this).attr('title', 'div ' + (i + 1) + ' title');
+        });
+
+        // Retrieve and alert the title attribute value of all DIV elements
+        $('div').each(function () {
+            alert($(this).attr('title'));
+        });
+    });
+</script>

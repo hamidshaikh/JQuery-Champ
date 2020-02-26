@@ -1,0 +1,67 @@
+<!-- In this video we will discuss, how to select values of checked checkboxes that are in different 
+groups using jQuery. Along the way, we will also discuss how to pass a variable to jquery selector. -->
+
+<!-- This is continuation to Part 11, please watch Part 11 from jQuery tutorial before proceeding.
+
+If you have just one group of checkboxes on your page, to get all the checked checkboxes you can use 
+$('input[type="checkbox"]:checked').  -->
+
+<!-- However, if you have more than one checkbox group, then $('input[type="checkbox"] :checked') is 
+going to select all checked checkboxes from both the checkbox groups. -->
+
+<!-- If you prefer to get checked checkboxes from a specific checkbox group, depending on which button 
+    you have clicked, you can use $('input[name="skills"]:checked') or  
+$('input[name="cities"]:checked'). This will ensure that the checked checkboxes from only the skills or 
+cities checkbox group are selected. -->
+
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnGetSelectedSkills').click(function () {
+                getSelectedCheckBoxes('skills');
+            });
+
+            $('#btnGetSelectedCities').click(function () {
+                getSelectedCheckBoxes('cities');
+            });
+
+            var getSelectedCheckBoxes = function (groupName) {
+                var result = $('input[name="' + groupName + '"]:checked');
+                if (result.length > 0) {
+                    var resultString = result.length + " checkboxe(s) checked<br/>";
+                    result.each(function () {
+                        resultString += $(this).val() + "<br/>";
+                    });
+                    $('#divResult').html(resultString);
+                }
+                else {
+                    $('#divResult').html("No checkbox checked");
+                }
+            };
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    Skills :
+    <input type="checkbox" name="skills" value="JavaScript" />JavaScript
+    <input type="checkbox" name="skills" value="jQuery" />jQuery
+
+    <input type="checkbox" name="skills" value="C#" />C#
+    <input type="checkbox" name="skills" value="VB" />VB
+    <br /><br />
+    Preferred Cities :
+    <input type="checkbox" name="cities" value="New York" />New York
+    <input type="checkbox" name="cities" value="New Delhi" />New Delhi
+    <input type="checkbox" name="cities" value="London" />London
+    <br /><br />
+    <input id="btnGetSelectedSkills" type="submit" value="Get Selected Skills" />
+    <input id="btnGetSelectedCities" type="submit" value="Get Selected Cities" />
+    <br /><br />
+    <div id="divResult">
+    </div>
+</body>
+</html>
