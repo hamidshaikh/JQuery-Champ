@@ -1,0 +1,34 @@
+<!-- If you are using jQuery 1.7 or higher version, jQuery recommends to use on() to perform event 
+delegation instead of delegate(). The above example can be very easily rewritten using on() and 
+off() functions, instead of delegate() and undelegate() functions as shown below. We discussed 
+performing event delegation using on() function in detail in Part 36 of jQuery tutorial. -->
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('ul').on('click', 'li', function () {
+                $(this).fadeOut(500);
+            });
+
+            $('#btnAdd').on('click', function () {
+                $('ul').append('<li>New List Item</li>');
+            });
+
+            $('#btnUndelegate').on('click', function () {
+                $('ul').off('click', 'li');
+            });
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <input id="btnAdd" type="button" value="Add a New List Item" />
+    <input id="btnUndelegate" type="button" value="Undelegate" />
+    <ul>
+        <li>List Item</li>
+        <li>List Item</li>
+    </ul>
+</body>
+</html>

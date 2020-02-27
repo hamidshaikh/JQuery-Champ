@@ -1,0 +1,42 @@
+<!-- In this video we will discuss, how to add event handlers to dynamically created elements. Let us 
+understand this with an example.
+
+The following example, allows us to dynamically create new list item (li), attach a click event 
+handler and add it to the unordered list (ul). This happens when you click "Add a New List Item" 
+button. The problem with this approach is that we are binding a click event handler to every 
+list item. This means if you have 500 list items, then there will be 500 event handlers in the 
+memory and this may negatively affect the performance of your application. -->
+
+
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li').on('click', function () {
+                $(this).fadeOut(500);
+            });
+
+            $('#btnAdd').on('click', function () {
+                var newListItem = $('<li>New List Item</li>').on('click', function () {
+                    $(this).fadeOut(500);
+                });
+
+                $('ul').append(newListItem);
+            });
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <input id="btnAdd" type="button" value="Add a New List Item" />
+    <ul>
+        <li>List Item</li>
+        <li>List Item</li>
+    </ul>
+</body>
+</html>
+
+<!-- A better way of doing the same from a performance standpoint is shown below. In this example, 
+the click event handler is attached to the listitem (li) parent element (ul). Even if you have 500 
+list items, there is only one click event handler in memory. -->
